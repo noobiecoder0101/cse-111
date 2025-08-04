@@ -30,3 +30,17 @@ elements = {
 }
 
 print(elements ["hydrogen"])
+
+elements["oxygen"] = {
+    "molarmass" : 16.00,
+    "symbol" : "O",
+    "catchphrase": "breathe"
+}
+
+elements["oxygen"]["molarmass"] = 16.09
+del elements["oxygen"]["catchphrase"]
+
+for name, data in elements.items():
+    print(f"Element: {name}")
+    for key, value in data.items():
+        print (f"{key}: {value}")
