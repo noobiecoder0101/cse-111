@@ -1,0 +1,138 @@
+Alright — you don’t want the answers, just the roadmap so you can build it yourself.
+Here’s the step-by-step learning + building plan for Week 4 Chemistry Project without giving you any finished code.
+
+Part 1 — Milestone
+Step 1 — Set up your project folder
+Create a new folder (name it anything, e.g. week4_chemistry).
+
+Inside, create a file named chemistry.py.
+
+Download test_chemistry_milestone.py from your course into the same folder.
+
+Open the folder in VS Code.
+
+Step 2 — Write make_periodic_table()
+Create a function called make_periodic_table() (no parameters).
+
+Inside it, create a dictionary:
+
+Key = element symbol (string)
+
+Value = a list containing the element’s name and its atomic mass.
+
+Add all elements from the provided table (tedious but important).
+
+Return the dictionary.
+
+💡 Tip: Check that your keys match exactly (case-sensitive symbols like "Na" not "na").
+
+Step 3 — Create a simple main() for testing
+Make a main() function that calls make_periodic_table() and prints the dictionary.
+
+Add the if __name__ == "__main__": main() block.
+
+Step 4 — Test Milestone
+Run:
+
+bash
+Copy
+Edit
+python test_chemistry_milestone.py
+Fix any typos until the test passes.
+
+Part 2 — Full Project
+Step 5 — Add formula.py
+Download the given formula.py from your course.
+
+Place it in the same folder.
+
+At the top of chemistry.py, import:
+
+python
+Copy
+Edit
+from formula import parse_formula
+Step 6 — Understand how parse_formula() works
+Read the docstring at the top of the function in formula.py.
+
+Know that:
+
+Input: "C6H12O6"
+
+Output: [["C", 6], ["H", 12], ["O", 6]]
+
+This output is called a symbol_quantity_list.
+
+Step 7 — Write compute_molar_mass()
+This function needs two parameters:
+
+symbol_quantity_list
+
+periodic_table_dict
+
+Loop through each [symbol, quantity] pair.
+
+For each symbol:
+
+Look up its atomic mass in periodic_table_dict.
+
+Multiply atomic mass by quantity.
+
+Add result to a running total.
+
+Return the total.
+
+💡 Hint: Use index constants (e.g. SYMBOL_INDEX = 0, QUANTITY_INDEX = 1) to make code readable.
+
+Step 8 — Build the final main()
+Ask user for:
+
+Chemical formula
+
+Mass of sample (grams → float)
+
+Call make_periodic_table() to get dictionary.
+
+Call parse_formula(formula, periodic_table_dict) to get symbol/quantity list.
+
+Call compute_molar_mass() to get molar mass.
+
+Print molar mass (formatted to 5 decimal places).
+
+Calculate moles = sample_mass / molar_mass.
+
+Print moles (formatted to 5 decimal places).
+
+Step 9 — Run Full Test
+Download test_chemistry.py from your course.
+
+Run:
+
+bash
+Copy
+Edit
+python test_chemistry.py
+All tests should pass.
+
+Step 10 — Manual Check
+Run:
+
+bash
+Copy
+Edit
+python chemistry.py
+Example input:
+
+yaml
+Copy
+Edit
+Enter the molecular formula of the sample: C6H6
+Enter the mass in grams of the sample: 25.04
+Expected:
+
+Molar mass around 78.11184
+
+Moles around 0.32057
+
+Do you want me to also make you a visual diagram of how the three main functions (make_periodic_table, compute_molar_mass, and main) connect?
+It’ll help you remember the flow when you’re offline.
