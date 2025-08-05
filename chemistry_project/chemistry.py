@@ -1,6 +1,21 @@
+from formula import parse_formula
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def make_periodic_table():
-    element_list = {
-        # symbl:[e_name,mol_mas]
+    periodic_table_dict = { # symbl:[e_name,mol_mas]
         "Ac":["Actinium", 227],
         "Ag": ["Silver", 107.8682],
         "Al": ["Aluminum", 26.9815386],
@@ -97,6 +112,33 @@ def make_periodic_table():
         "Zr": ["Zirconium", 91.224],
     }
     return make_periodic_table
+def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
+    symbol_index = 0
+    quantity_index = 1
+    for element in symbol_quantity_list:
+        symbol = element[symbol_index]
+        quantity = element[quantity_index]
+        atomic_mass = periodic_table_dict[0][1]
+        #periodic_table_dict = [ # symbl:,[e_name,mol_mas]]
+        molar_mass = molar_mass + (atomic_mass * quantity)
+
+        return molar_mass
+
+
+
+
+
+
 def main():
-    if __name__ == "__main__":
+    formula = input("please input the chemical formula: eg H2O")
+    mass_of_sample = float(input("please input the mass of the sample: eg: 23.0976  "))
+    make_periodic_table()
+    parse_formula(formula, periodic_table_dict=)
+    compute_molar_mass()
+
+    # table = make_periodic_table()
+    # print
+
+if __name__ == "__main__":
         main()
+

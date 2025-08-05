@@ -40,7 +40,7 @@ elements["oxygen"] = {
 elements["oxygen"]["molarmass"] = 16.09
 del elements["oxygen"]["catchphrase"]
 
-for name, data in elements.items():
-    print(f"Element: {name}")
-    for key, value in data.items():
-        print (f"{key}: {value}")
+for name, data in elements.items:
+    # print(f"Element: {name}")
+    # for key, value in data.items():
+    #     print (f"{key}: {value}")
